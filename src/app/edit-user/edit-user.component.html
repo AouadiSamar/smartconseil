@@ -1,0 +1,71 @@
+<div class="form-container">
+
+  <div class="tabs">
+    <button class="tab active">Modifier mon profil</button>
+    <button class="tab" (click)="redirectToProfile()">Mes Enfants</button>
+  </div>
+
+  <div class="profile-photo-container">
+    <img src="assets/img56.png" alt="Votre photo de profil" class="profile-photo" />
+    <div class="photo-actions">
+      <p>Votre photo de profil</p>
+
+      <button class="photo-button" (click)="onReplacePhoto()">Remplacer</button>
+      <button class="photo-button delete" (click)="onDeletePhoto()">Supprimer</button>
+    </div>
+
+  </div>
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="username">Nom d'utilisateur</label>
+      <input type="text" id="username" [(ngModel)]="user.username" name="username" disabled />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Adresse E-mail</label>
+      <input type="email" id="email" [(ngModel)]="user.email" name="email" disabled />
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="lastName">Nom</label>
+        <input type="text" id="lastName" [(ngModel)]="user.last_name" name="last_name" required />
+      </div>
+      <div class="form-group">
+        <label for="firstName">Prénom</label>
+        <input type="text" id="firstName" [(ngModel)]="user.first_name" name="first_name" required />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Numéro de téléphone</label>
+      <input
+        type="tel"
+        id="phone"
+        [(ngModel)]="user.phone"
+        name="phone"
+        placeholder="+33-6-12-34-56-78"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Genre</label>
+      <div class="radio-group">
+        <label><input type="radio" [(ngModel)]="user.gender" name="gender" value="M" required /> Parent1</label>
+        <label><input type="radio" [(ngModel)]="user.gender" name="gender" value="F" required /> Parent2</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="birthDate">Date de naissance</label>
+      <input type="date" id="birthDate" [(ngModel)]="user.birthday" name="birthday" required />
+    </div>
+
+    <div class="buttons">
+      <button type="button" class="cancel-btn" (click)="onCancel()">Annuler</button>
+      <button type="submit" class="save-btn">Enregistrer</button>
+    </div>
+  </form>
+</div>

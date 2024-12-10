@@ -1,0 +1,119 @@
+<div class="container">
+  <div class="tabs">
+      <button class="tab active"
+       (click)="redirectToEditUser()">Modifier mon profil</button>
+
+    <button class="tab">Mes Enfants</button>
+  </div>
+
+  <div class="container">
+
+    <div class="children-list">
+      <div class="children-list">
+        <div class="child">
+          <img src="assets/img2.png" alt="Avatar de Jerry" class="child-avatar" />
+          <p class="child-name">Roby Smith</p>
+        </div>
+
+
+        <div class="child">
+          <img src="assets/img3.png" alt="Avatar d'Alice" class="child-avatar" />
+          <p class="child-name">Alice Smith</p>
+        </div>
+
+        <div class="child">
+          <img src="assets/img5.png" alt="Avatar de Robin" class="child-avatar" />
+          <p class="child-name">Robin Smith</p>
+        </div>
+
+        <!-- Enfant-->
+        <div class="child">
+          <img src="assets/img9.png" alt="Avatar par défaut" class="child-avatar" />
+          <p class="child-name">Nadine Smith</p>
+        </div>
+
+        <div class="child add-new">
+          <button>+</button>
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+
+  <div class="base-info">
+    <h2>INFORMATION DE BASE</h2>
+    <div class="profile-photo-container">
+      <img src="assets/imgsmart.png" alt="Photo de profil" class="profile-photo">
+      <div class="photo-actions">
+        <button class="photo-button">Remplacer</button>
+        <button class="photo-button delete">Supprimer</button>
+      </div>
+    </div>
+
+    <form>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">Prénom</label>
+          <input type="text" id="firstName" [(ngModel)]="selectedChild.first_name" placeholder="Jerry">
+        </div>
+        <div class="form-group">
+          <label for="lastName">Nom</label>
+          <input type="text" id="lastName" [(ngModel)]="selectedChild.last_name" placeholder="Smith">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="birthDate">Date de naissance</label>
+          <input type="date" id="birthDate" [(ngModel)]="selectedChild.birthday" value="2016-06-22">
+        </div>
+        <div class="form-group">
+          <label>Genre</label>
+          <div class="radio-group">
+            <label><input type="radio" [(ngModel)]="selectedChild.gender" name="gender" value="M"> Garçon</label>
+            <label><input type="radio" [(ngModel)]="selectedChild.gender" name="gender" value="F"> Fille</label>
+            <label><input type="radio" [(ngModel)]="selectedChild.gender" name="gender" value="O"> Autre</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button type="button" class="cancel-btn">Annuler</button>
+        <button type="submit" class="save-btn">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Réseaux sociaux -->
+  <div class="social-networks">
+    <h2>LES RÉSEAUX SOCIAUX DE JERRY</h2>
+    <div class="social-network">
+      <div class="icon">
+        <i class="fab fa-facebook"></i>
+      </div>
+      <input type="text" placeholder="Nom d'utilisateur">
+      <button>Enregistrer</button>
+    </div>
+    <div class="social-network">
+      <div class="icon">
+        <i class="fab fa-twitter"></i>
+      </div>
+      <input type="text" placeholder="Nom d'utilisateur">
+      <button>Enregistrer</button>
+    </div>
+    <div class="social-network">
+      <div class="icon">
+        <i class="fab fa-instagram"></i>
+      </div>
+      <input type="text" placeholder="Nom d'utilisateur">
+      <button>Enregistrer</button>
+    </div>
+    <button class="add-social">Ajouter un réseau social</button>
+  </div>
+</div>
+
+
+
